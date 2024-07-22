@@ -1,8 +1,112 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap');
-
-:root {
-  --blue-900: #0B0D17;
-  --blue-300: #D0D6F9;
-  --white: #FFFFFF;
+#root {
+  height: 100dvh;
+  width: 100dvw;
+  display: flex;
+  flex-direction: column;
+  background-image: url('src/assets/home/background-home-mobile.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #FFFFFF;
 }
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+.header__nav-icon:hover {
+  cursor: pointer;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  flex: 1;
+}
+
+.home__description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  height: 50%;
+  flex: 1;
+}
+.home__description > p {
+  font-weight: 400;
+  color: var(--blue-300);
+}
+.home__description > p:first-of-type {
+  font-family: var(--font-barlow-condensed), sans-serif;
+  font-size: 1.75rem;
+}
+
+.home__description > h1 {
+  font-family: var(--font-bellefair), serif;
+  line-height: normal;
+  font-weight: 400;
+  font-size: 6.25rem;
+  color: var(--white);
+}
+
+.home__description > p:last-of-type {
+  font-family: var(--font-barlow), sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  text-align: center;
+}
+
+.home__link {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.home__link-button--hovered {
+  background-color: antiquewhite;
+  border-radius: 50%;
+  width: 20rem;
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: .5;
+}
+
+.home__link-button {
+  background-color: var(--white);
+  font-size: 1.125rem;
+  font-family: var(--font-bellefair), serif;
+  display: flex;
+  align-items: center;
+  border: none;
+  justify-content: center;
+  height: 9rem;
+  width: 9rem;
+  padding: 2rem;
+  border-radius: 50%;
+}
+
+.home__link-button:hover {
+  cursor: pointer;
+}
+
+
+@media (min-width: 768px) {
+  #root {
+    background-image: url('src/assets/home/background-home-tablet.jpg');
+  }
+}
+
+@media (min-width: 1200px) {
+  #root {
+    background-image: url('src/assets/home/background-home-desktop.jpg');
+  }
+}
+
 
