@@ -1,6 +1,9 @@
 import './App.css'
+import { useState} from "react";
 
 function App() {
+  const [isHovered, setHovered] = useState(false);
+
   return (
     <>
       <header className="header">
@@ -33,11 +36,13 @@ function App() {
           </p>
         </section>
         <section className="home__link">
-          <div className="home__link-button--hovered">
-            <button className="home__link-button">
-              EXPLORE
-            </button>
-          </div>
+          <button className="home__link-button"
+                  onMouseEnter={() => setHovered(true)}
+                  onMouseLeave={() => setHovered(false)}
+          >
+            <span className={`${isHovered ? 'hovered' : ''}`}>EXPLORE</span>
+          </button>
+          <div className={`home__link-button-behind ${isHovered ? 'hovered' : ''}`}></div>
         </section>
       </section>
     </>
