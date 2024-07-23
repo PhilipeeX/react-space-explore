@@ -7,6 +7,53 @@
   background-size: cover;
   background-position: center;
   color: #FFFFFF;
+  position: relative;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -70dvw;
+  height: 100dvh;
+  width: 70dvw;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(20px);
+  z-index: 2;
+  transform: translateX(10%);
+  transition: transform 0.5s ease;
+}
+
+.mobile-nav--visible {
+  transform: translateX(-100%);
+}
+
+.mobile-nav__close-btn {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  padding: 2rem;
+}
+
+.mobile-nav__links {
+  padding: 3rem 0 0 3rem;
+  font-family: var(--font-barlow-condensed), serif;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+
+.mobile-nav__links a {
+  border-inline-end: 2px solid transparent;
+  width: 99%;
+  display: flex;
+}
+
+.mobile-nav__links a span {
+  margin-right: 1rem;
+  font-weight: bold;
 }
 
 header {
@@ -108,7 +155,6 @@ header {
 .home__link-button:hover {
   cursor: pointer;
 }
-
 
 @media (min-width: 768px) {
   #root {
